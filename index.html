@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Imagery Updating</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Past Imagery Updating</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <h1>Past Imagery Updating</h1>
 
-    <div id="step-container" class="instruction-box">
-      <div id="instruction-text"></div>
-      <textarea id="step-input" placeholder="Your reflection goes here..."></textarea>
-      <div class="button-row">
-        <button id="backBtn" class="nav-btn hidden">Back</button>
-        <button id="nextBtn" class="nav-btn">Next</button>
-        <button id="finishBtn" class="nav-btn hidden">Finish</button>
-      </div>
-    </div>
+    <!-- Slide container -->
+    <div id="slide-container"></div>
 
-    <div id="summary" class="hidden">
-      <h2>Reflection Summary</h2>
-      <ul id="summaryList"></ul>
+    <!-- Navigation -->
+    <div class="nav-buttons">
+      <button id="backBtn" class="hidden">Back</button>
+      <button id="nextBtn">Next</button>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

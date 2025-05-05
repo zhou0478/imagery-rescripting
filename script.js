@@ -67,6 +67,7 @@ nextBtn.addEventListener('click', () => {
   }
 });
 
+// ✅ Correctly wait for DOM to load before rendering first slide
 document.addEventListener('DOMContentLoaded', () => {
   showSlide(currentSlide);
 });

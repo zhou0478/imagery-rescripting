@@ -1,14 +1,14 @@
 const slides = [
-  // Page 1: Introduction
+  // Page 1: Intro
   `
     <div class="slide">
-      <p>People with body image issues often say that memories of early negative appearance experiences, like being teased about how they look, can still affect how they feel about their body, even years later. These negative images can get ‘stuck’ in our minds.</p>
-      <p>Now, we can't change what happened, but these past experiences don’t have to continue to impact our lives today.</p>
+      <p>People with body image issues often say that memories of early negative appearance experiences, like being teased about how they look, can still affect how they feel about their body, even years later.</p>
+      <p>These negative images can get ‘stuck’ in our minds. Now, we can't change what happened, but these past experiences don’t have to continue to impact our lives today.</p>
       <p>With a strategy called ‘imagery updating’, we can look at those old memories in a new way, which helps us stop letting them affect how we see ourselves. This method is proven to make those memories feel less important over time.</p>
-      <p><strong>Now, let’s give this strategy a go, it has 3 steps…</strong></p>
+      <p><strong>Now, let’s give this strategy a go. It has 3 steps…</strong></p>
     </div>
   `,
-  // Page 2: Step 1 intro and input
+  // Page 2: Step 1
   `
     <div class="slide">
       <p><strong>Let’s start with Step 1…</strong></p>
@@ -17,21 +17,20 @@ const slides = [
       <div class="example-box">
         <p><strong>Some examples are:</strong></p>
         <ul>
-          <li>being teased by your peers about how you look</li>
-          <li>receiving negative/critical comments about your body or appearance</li>
-          <li>feeling uncomfortable/insecure about your body when trying on clothes in a change-room, looking yourself in the mirror, getting ready with friends to go to a party, walking past a group of people who were looking at you, out in public</li>
+          <li>Being teased by your peers about how you look</li>
+          <li>Receiving negative/critical comments about your body</li>
+          <li>Feeling uncomfortable trying on clothes, looking in the mirror, getting ready for a party, etc.</li>
         </ul>
       </div>
 
-      <p>Now take a moment to close your eyes and imagine this earliest event as if it is happening right now. Notice the thoughts and feelings that come up for you. Please only continue when you have a picture of this earliest event in your mind.</p>
-
-      <p>When you’re ready, in a few sentences, write about this earliest event you just thought about. Describe the event as if it is happening right now.</p>
+      <p>Now close your eyes and imagine this earliest event as if it's happening now. Notice the thoughts and feelings that come up.</p>
+      <p>When ready, describe this event in a few sentences.</p>
 
       <div class="reminders">
         <p><strong>Try to:</strong></p>
         <ol>
-          <li>Write using “I” language (e.g., “I’m in the change room, trying on a pair of blue jeans. My friend is in the change room next to me also trying on clothes.”)</li>
-          <li>Include as much detail as you can, such as what you are doing, who you are with, what you can see, how you are feeling, and what thoughts are going through your mind.</li>
+          <li>Use “I” language (e.g., “I’m in the change room, trying on jeans.”)</li>
+          <li>Include detail: what you're doing, who you're with, what you see/feel/think.</li>
         </ol>
       </div>
 
@@ -41,14 +40,13 @@ const slides = [
 ];
 
 let currentSlide = 0;
+
 const container = document.getElementById('slide-container');
 const backBtn = document.getElementById('backBtn');
 const nextBtn = document.getElementById('nextBtn');
 
 function showSlide(index) {
   container.innerHTML = slides[index];
-  const slideElement = container.querySelector('.slide');
-  setTimeout(() => slideElement.classList.add('show'), 10);
   backBtn.classList.toggle('hidden', index === 0);
   nextBtn.textContent = index === slides.length - 1 ? 'Finish' : 'Next';
 }
@@ -65,6 +63,10 @@ nextBtn.addEventListener('click', () => {
     currentSlide++;
     showSlide(currentSlide);
   } else {
-    alert('Thank you! (Summary page coming soon...)');
+    alert('Thank you! (Summary page coming soon…)');
   }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  showSlide(currentSlide);
 });

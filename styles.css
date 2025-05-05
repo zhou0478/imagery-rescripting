@@ -18,15 +18,12 @@ h1 {
   text-align: center;
 }
 
-.instruction-box {
-  font-size: 18px;
-  line-height: 1.6;
-  min-height: 200px;
-  white-space: pre-wrap;
-  border-left: 4px solid #3f51b5;
-  padding-left: 16px;
-  margin-bottom: 20px;
-  animation: fadeIn 1s ease-in;
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
 }
 
 textarea {
@@ -35,6 +32,11 @@ textarea {
   margin-bottom: 10px;
   padding: 10px;
   font-size: 16px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 button {
@@ -50,11 +52,11 @@ button:hover {
   background-color: #303f9f;
 }
 
-.hidden {
-  display: none;
+#summary-list {
+  list-style-type: none;
+  padding: 0;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+#summary-list li {
+  margin-bottom: 20px;
 }

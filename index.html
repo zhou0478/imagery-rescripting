@@ -10,73 +10,21 @@
   <div class="container">
     <h1>Past Imagery Updating</h1>
 
-    <form id="imageryForm">
-      <!-- Step 1 -->
-      <div class="step" id="step-1">
-        <p>People with body image issues often say that memories of early negative appearance experiences, like being teased about how they look, can still affect how they feel about their body, even years later. These negative images can get ‘stuck’ in our minds.</p>
-        <p>Now, we can't change what happened, but these past experiences don’t have to continue to impact our lives today.</p>
-        <p>With a strategy called ‘imagery updating’, we can look at those old memories in a new way, which helps us stop letting them affect how we see ourselves. This method is proven to make those memories feel less important over time.</p>
-        <p>Now, let’s give this strategy a go, it has 3 steps…</p>
-        <p><strong>Let’s start with Step 1…</strong></p>
-        <p>First, try to think about the earliest event you can remember of an unpleasant body experience where you felt ashamed or embarrassed of your body or how your body looks. It could be something that happened to you when you were a child, or a teenager.</p>
-        <p>Now take a moment to close your eyes and imagine this earliest event as if it is happening right now. Notice the thoughts and feelings that come up for you. Please only continue when you have a picture of this earliest event in your mind.</p>
-        <p>When you’re ready, in a few sentences, write about this earliest event you just thought about. Describe the event as if it is happening right now.</p>
-        <p>Try to:</p>
-        <ol>
-          <li>Write using “I” language (e.g., “I’m in the change room, trying on a pair of blue jeans. My friend is in the change room next to me also trying on clothes.”)</li>
-          <li>Include as much detail as you can, such as what you are doing, who you are with, what you can see, how you are feeling, and what thoughts are going through your mind.</li>
-        </ol>
-        <textarea id="input-step-1" required></textarea>
-        <div class="navigation-buttons">
-          <button type="button" id="next-1">Next</button>
-        </div>
+    <div id="step-container" class="instruction-box">
+      <div id="instruction-text"></div>
+      <textarea id="step-input" placeholder="Your reflection goes here..."></textarea>
+      <div class="button-row">
+        <button id="backBtn" class="nav-btn hidden">Back</button>
+        <button id="nextBtn" class="nav-btn">Next</button>
+        <button id="finishBtn" class="nav-btn hidden">Finish</button>
       </div>
+    </div>
 
-      <!-- Step 2 -->
-      <div class="step" id="step-2">
-        <p><strong>Well done! Let’s move onto Step 2…</strong></p>
-        <p>Think about the same memory again. This time, when you close your eyes and imagine this event, imagine it as if you were someone else watching the event happen from the outside. Imagine you were watching your younger self going through the event again.</p>
-        <p>Now take a moment to close your eyes and re-imagine this event as if it were happening to you right now. Remember, this time you are someone else watching the event happen from the outside. Imagine you are watching your younger self going through the event again. Please only continue when you have a picture of this in your mind.</p>
-        <p>Now, in a few sentences, write about this event as if it is happening right now, but this time, write about what someone else would see if they were watching the event happen from the outside, as if it were happening to your younger self right now.</p>
-        <p>Try to:</p>
-        <ol>
-          <li>Write as if someone else is telling the story about you (e.g., if your name is Sarah, write "I see Sarah in the change room, she is trying on a pair of blue jeans. She’s with her friend who is also trying on clothes.”)</li>
-          <li>Include as much detail as you can, such as where Sarah is, what Sarah is doing, who Sarah is with, how Sarah might be feeling, and what thoughts might be going through Sarah’s mind.</li>
-        </ol>
-        <textarea id="input-step-2" required></textarea>
-        <div class="navigation-buttons">
-          <button type="button" id="back-2">Back</button>
-          <button type="button" id="next-2">Next</button>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="step" id="step-3">
-        <p><strong>Well done! Now let’s do Step 3, the final step…</strong></p>
-        <p>Think about the same memory one last time. This time, you are your younger self again (using “I” language), but your wiser and kinder older self is with you in the room. Your older self can get involved if you want them to. They can offer you kindness or provide new updated information based on what you know now, they can talk to you (or others) or do anything else that feels helpful and right in the situation.</p>
-        <p>Now take a moment to close your eyes and re-imagine this event as if it were happening to you right now. Remember, this time your wiser and kinder older self is with you and can get involved if you want them to. Please only continue when you have a picture of this in your mind.</p>
-        <p>Now, in a few sentences, write about this event as if it is happening right now, but this time, your wiser and older self is with you and can get involved if you want them to.</p>
-        <p>Try to:</p>
-        <ol>
-          <li>Write using “I” language like you did earlier (e.g., “I’m in the change room, trying on a pair of blue jeans. My friend is in the change room next to me also trying on clothes.”) but, when you talk about your older self, write it like you’re telling a story about them (e.g., “older Sarah said…”).</li>
-          <li>Include as much detail as you can, such as what you are doing, who you are with, what you can see, how you are feeling, and what thoughts are going through your mind.</li>
-          <li>Describe what your wiser and kinder older self does in the situation. Remember, they can offer you kindness or provide new updated information based on what you know now, they can talk to you (or others) or do anything else that feels helpful and right in the situation.</li>
-        </ol>
-        <textarea id="input-step-3" required></textarea>
-        <div class="navigation-buttons">
-          <button type="button" id="back-3">Back</button>
-          <button type="button" id="finish">Finish</button>
-        </div>
-      </div>
-
-      <!-- Summary -->
-      <div class="step" id="summary">
-        <h2>Reflection Summary</h2>
-        <ul id="summary-list"></ul>
-      </div>
-    </form>
+    <div id="summary" class="hidden">
+      <h2>Reflection Summary</h2>
+      <ul id="summaryList"></ul>
+    </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>

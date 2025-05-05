@@ -3,44 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Try WOOP</title>
+  <title>Imagery Updating</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Try WOOP</h1>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/LiPq-C6e7GU" frameborder="0" allowfullscreen></iframe>
-    </div>
+    <h1>Past Imagery Updating</h1>
 
-    <form id="woopForm">
-      <div class="step" id="step1">
-        <h2>1. Wish</h2>
-        <textarea placeholder="What is something important you wish to accomplish?" required></textarea>
-        <button type="button" onclick="nextStep(1)">Next</button>
-      </div>
+    <div id="instructions" class="instruction-box"></div>
 
-      <div class="step" id="step2">
-        <h2>2. Outcome</h2>
-        <textarea placeholder="What would be the best result?" required></textarea>
-        <button type="button" onclick="nextStep(2)">Next</button>
-      </div>
-
-      <div class="step" id="step3">
-        <h2>3. Obstacle</h2>
-        <textarea placeholder="What is your internal obstacle?" required></textarea>
-        <button type="button" onclick="nextStep(3)">Next</button>
-      </div>
-
-      <div class="step" id="step4">
-        <h2>4. Plan</h2>
-        <textarea placeholder="What’s your plan if the obstacle arises?" required></textarea>
-        <button type="submit">Finish</button>
-      </div>
+    <form id="imageryForm" class="hidden">
+      <textarea id="userInput" placeholder="Your reflection goes here..." required></textarea>
+      <button type="submit">Next</button>
     </form>
 
-    <div id="results" class="hidden">
-      <h2>Your WOOP Summary</h2>
+    <div id="summary" class="hidden">
+      <h2>Reflection Summary</h2>
       <ul id="summaryList"></ul>
     </div>
   </div>

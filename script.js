@@ -29,6 +29,7 @@ const slides = [
   // Step 1 Writing
   `
   <div class="slide">
+    <p><strong>Step 1</strong></p>
     <p>When you’re ready, in a few sentences, write about this earliest event you just thought about. Describe the event as if it is happening right now.</p>
     <div class="reminders">
       <p><strong>Try to:</strong></p>
@@ -53,6 +54,7 @@ const slides = [
   // Step 2 Writing
   `
   <div class="slide">
+    <p><strong>Step 2</strong></p>
     <p>Now, in a few sentences, write about this event as if it is happening right now, but this time, write about what someone else would see if they were watching the event happen from the outside, as if it were happening to your younger self right now.</p>
     <div class="reminders">
       <p><strong>Try to:</strong></p>
@@ -68,6 +70,7 @@ const slides = [
   // Step 3 Imagery
   `
   <div class="slide">
+    <p><strong>Well done! Now let’s do Step 3, the final step…</strong></p>
     <p>Think about the same memory one last time. This time, you are your younger self again (using “I” language), but your wiser and kinder older self is with you in the room. Your older self can get involved if you want them to. They can offer you kindness or provide new updated information based on what you know now, they can talk to you (or others) or do anything else that feels helpful and right in the situation.</p>
     <p>Now take a moment to close your eyes and re-imagine this event as if it were happening to you right now. Remember, this time your wiser and kinder older self is with you and can get involved if you want them to. Please only continue when you have a picture of this in your mind.</p>
   </div>
@@ -76,6 +79,7 @@ const slides = [
   // Step 3 Writing
   `
   <div class="slide">
+    <p><strong>Step 3</strong></p>
     <p>Now, in a few sentences, write about this event as if it is happening right now, but this time, your wiser and older self is with you and can get involved if you want them to.</p>
     <div class="reminders">
       <p><strong>Try to:</strong></p>

@@ -149,7 +149,7 @@ nextBtn.addEventListener('click', () => {
     currentSlide++;
     showSlide(currentSlide);
   } else {
-    alert("You've completed the reflection!");
+    alert("You've completed past imagery updating!");
   }
 });
 

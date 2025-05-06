@@ -55,3 +55,11 @@ button:hover {
 .hidden {
   display: none;
 }
+
+.summary-box {
+  background: #f0f8ff;
+  padding: 15px;
+  border-left: 4px solid #2196f3;
+  white-space: pre-wrap;
+  margin-bottom: 20px;
+}

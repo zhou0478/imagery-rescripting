@@ -105,6 +105,7 @@ const slides = [
       <p id="summary2" class="summary-box"></p>
       <h3>Step 3</h3>
       <p id="summary3" class="summary-box"></p>
+      <button id="downloadBtn">Download PDF</button>
     </div>
   </div>
   `
@@ -154,3 +155,26 @@ nextBtn.addEventListener('click', () => {
 });
 
 showSlide(currentSlide);
+
+document.addEventListener('click', function (e) {
+  if (e.target.id === 'downloadBtn') {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    doc.setFontSize(16);
+    doc.text("Your Imagery Rescripting Summary", 10, 20);
+    
+    doc.setFontSize(12);
+    doc.text("Step 1:", 10, 40);
+    doc.text(userResponses[0] || 'No input.', 10, 50);
+
+    doc.text("Step 2:", 10, 80);
+    doc.text(userResponses[1] || 'No input.', 10, 90);
+
+    doc.text("Step 3:", 10, 120);
+    doc.text(userResponses[2] || 'No input.', 10, 130);
+
+    doc.save("imagery-summary.pdf");
+  }
+});
+

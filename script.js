@@ -35,8 +35,8 @@ const slides = [
     <div class="reminders">
       <p><strong>Try to:</strong></p>
       <ol>
-        <li>Write using “I” language...</li>
-        <li>Include as much detail as you can...</li>
+        <li>Write using “I” language (e.g., “I’m in the change room, trying on a pair of blue jeans. My friend is in the change room next to me also trying on clothes.”)</li>
+        <li>Include as much detail as you can,such as what you are doing, who you are with, what you can see, how you are feeling, and what thoughts are going through your mind.</li>
       </ol>
     </div>
     <textarea id="response1" placeholder="Write your reflection here..."></textarea>
@@ -60,8 +60,8 @@ const slides = [
     <div class="reminders">
       <p><strong>Try to:</strong></p>
       <ol>
-        <li>Write as if someone else is telling the story...</li>
-        <li>Include as much detail as you can...</li>
+        <li>Write as if someone else is telling the storyabout you (e.g., if your name is Sarah, write "I see Sarah in the change room, she is trying on a pair of blue jeans. She’s with her friend who is also trying on clothes.”)</li>
+        <li>Include as much detail as you can, such as where Sarah is, what Sarah is doing, who Sarah is with, how Sarah might be feeling, and what thoughts might be going through Sarah’s mind.       </li>
       </ol>
     </div>
     <textarea id="response2" placeholder="Write your reflection here..."></textarea>
@@ -85,9 +85,9 @@ const slides = [
     <div class="reminders">
       <p><strong>Try to:</strong></p>
       <ol>
-        <li>Write using “I” language...</li>
-        <li>Include as much detail as you can...</li>
-        <li>Describe what your wiser and kinder older self does...</li>
+        <li>Write using “I” language  like you did earlier (e.g., “I’m in the change room, trying on a pair of blue jeans. My friend is in the change room next to me also trying on clothes.”) but, when you talk about your older self, write it like you’re telling a story about them (e.g., “older Sarah said…”). </li>
+        <li>Include as much detail as you can, such as what you are doing, who you are with, what you can see, how you are feeling, and what thoughts are going through your mind. </li>
+        <li><strong>Describe what your wiser and kinder older self does in the situation.</strong> Remember, they can offer you kindness or provide new updated information based on what you know now, they can talk to you (or others) or do anything else that feels helpful and right in the situation.</li>
       </ol>
     </div>
     <textarea id="response3" placeholder="Write your reflection here..."></textarea>

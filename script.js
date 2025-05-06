@@ -160,21 +160,27 @@ document.addEventListener('click', function (e) {
   if (e.target.id === 'downloadBtn') {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
-    
-    doc.setFontSize(16);
-    doc.text("Your Imagery Rescripting Summary", 10, 20);
-    
-    doc.setFontSize(12);
-    doc.text("Step 1:", 10, 40);
-    doc.text(userResponses[0] || 'No input.', 10, 50);
+    const allSlides = document.querySelectorAll('.slide');
 
-    doc.text("Step 2:", 10, 80);
-    doc.text(userResponses[1] || 'No input.', 10, 90);
+    let addSlideToPDF = (index) => {
+      if (index >= allSlides.length) {
+        doc.save("imagery-summary.pdf");
+        return;
+      }
 
-    doc.text("Step 3:", 10, 120);
-    doc.text(userResponses[2] || 'No input.', 10, 130);
+      html2canvas(allSlides[index]).then(canvas => {
+        let imgData = canvas.toDataURL("image/png");
+        let imgWidth = 190;
+        let pageHeight = 295;
+        let imgHeight = canvas.height * imgWidth / canvas.width;
 
-    doc.save("imagery-summary.pdf");
+        doc.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight);
+        if (index < allSlides.length - 1) doc.addPage();
+        addSlideToPDF(index + 1);
+      });
+    };
+
+    addSlideToPDF(0);
   }
 });
 

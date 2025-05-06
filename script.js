@@ -97,7 +97,7 @@ const slides = [
   // Final summary page
   `
   <div class="slide">
-    <h2>Your Reflections</h2>
+    <h2>A summary of your past imagery updating</h2>
     <div>
       <h3>Step 1</h3>
       <p id="summary1" class="summary-box"></p>

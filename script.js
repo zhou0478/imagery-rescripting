@@ -1,5 +1,7 @@
+const userResponses = ["", "", ""]; // 3 response fields (Step 1, 2, 3)
+
 const slides = [
-  // Step 1 Intro
+ // Step 1 Intro
   `
   <div class="slide">
     <p>People with body image issues often say that memories of early negative appearance experiences, like being teased about how they look, can still affect how they feel about their body, even years later. These negative images can get ‘stuck’ in our minds.</p>
@@ -25,8 +27,7 @@ const slides = [
     <p>Now take a moment to close your eyes and imagine this earliest event as if it is happening right now. Notice the thoughts and feelings that come up for you. Please only continue when you have a picture of this earliest event in your mind.</p>
   </div>
   `,
-
-  // Step 1 Writing
+  // Step 1 - Writing
   `
   <div class="slide">
     <p><strong>Step 1</strong></p>
@@ -34,15 +35,15 @@ const slides = [
     <div class="reminders">
       <p><strong>Try to:</strong></p>
       <ol>
-        <li>Write using “I” language (e.g., “I’m in the change room, trying on a pair of blue jeans. My friend is in the change room next to me also trying on clothes.”)</li>
-        <li>Include as much detail as you can, such as what you are doing, who you are with, what you can see, how you are feeling, and what thoughts are going through your mind.</li>
+        <li>Write using “I” language...</li>
+        <li>Include as much detail as you can...</li>
       </ol>
     </div>
-    <textarea placeholder="Write your reflection here..."></textarea>
+    <textarea id="response1" placeholder="Write your reflection here..."></textarea>
   </div>
   `,
 
-  // Step 2 Imagery
+  // Step 2 - Imagery
   `
   <div class="slide">
     <p><strong>Let’s move onto Step 2…</strong></p>
@@ -50,24 +51,24 @@ const slides = [
     <p>Now take a moment to close your eyes and re-imagine this event as if it were happening to you right now. Remember, this time you are someone else watching the event happen from the outside. Imagine you are watching your younger self going through the event again. Please only continue when you have a picture of this in your mind.</p>
   </div>
   `,
-
-  // Step 2 Writing
+  
+  // Step 2 - Writing
   `
   <div class="slide">
     <p><strong>Step 2</strong></p>
-    <p>Now, in a few sentences, write about this event as if it is happening right now, but this time, write about what someone else would see if they were watching the event happen from the outside, as if it were happening to your younger self right now.</p>
+    <p>Now, in a few sentences, write about this event as if it is happening right now...</p>
     <div class="reminders">
       <p><strong>Try to:</strong></p>
       <ol>
-        <li>Write as if someone else is telling the story about you (e.g., if your name is Sarah, write "I see Sarah in the change room, she is trying on a pair of blue jeans. She’s with her friend who is also trying on clothes.”)</li>
-        <li>Include as much detail as you can, such as where Sarah is, what Sarah is doing, who Sarah is with, how Sarah might be feeling, and what thoughts might be going through Sarah’s mind.</li>
+        <li>Write as if someone else is telling the story...</li>
+        <li>Include as much detail as you can...</li>
       </ol>
     </div>
-    <textarea placeholder="Write your reflection here..."></textarea>
+    <textarea id="response2" placeholder="Write your reflection here..."></textarea>
   </div>
   `,
 
-  // Step 3 Imagery
+  // Step 3 - Imagery
   `
   <div class="slide">
     <p><strong>Well done! Now let’s do Step 3, the final step…</strong></p>
@@ -76,20 +77,35 @@ const slides = [
   </div>
   `,
 
-  // Step 3 Writing
+  // Step 3 - Writing
   `
   <div class="slide">
     <p><strong>Step 3</strong></p>
-    <p>Now, in a few sentences, write about this event as if it is happening right now, but this time, your wiser and older self is with you and can get involved if you want them to.</p>
+    <p>Now, in a few sentences, write about this event...</p>
     <div class="reminders">
       <p><strong>Try to:</strong></p>
       <ol>
-        <li>Write using “I” language like you did earlier (e.g., “I’m in the change room, trying on a pair of blue jeans...”) but, when you talk about your older self, write it like you’re telling a story about them (e.g., “older Sarah said…”).</li>
-        <li>Include as much detail as you can, such as what you are doing, who you are with, what you can see, how you are feeling, and what thoughts are going through your mind.</li>
-        <li>Describe what your wiser and kinder older self does in the situation. They can offer you kindness, provide new insights, talk to you or others, or do anything else that feels helpful.</li>
+        <li>Write using “I” language...</li>
+        <li>Include as much detail as you can...</li>
+        <li>Describe what your wiser and kinder older self does...</li>
       </ol>
     </div>
-    <textarea placeholder="Write your reflection here..."></textarea>
+    <textarea id="response3" placeholder="Write your reflection here..."></textarea>
+  </div>
+  `,
+
+  // Final summary page
+  `
+  <div class="slide">
+    <h2>Your Reflections</h2>
+    <div>
+      <h3>Step 1</h3>
+      <p id="summary1" class="summary-box"></p>
+      <h3>Step 2</h3>
+      <p id="summary2" class="summary-box"></p>
+      <h3>Step 3</h3>
+      <p id="summary3" class="summary-box"></p>
+    </div>
   </div>
   `
 ];
@@ -101,13 +117,24 @@ const backBtn = document.getElementById('backBtn');
 const nextBtn = document.getElementById('nextBtn');
 
 function showSlide(index) {
+  // Save responses before navigating away
+  if (currentSlide === 2) userResponses[0] = document.getElementById("response1")?.value || "";
+  if (currentSlide === 4) userResponses[1] = document.getElementById("response2")?.value || "";
+  if (currentSlide === 6) userResponses[2] = document.getElementById("response3")?.value || "";
+
   container.innerHTML = slides[index];
   container.classList.remove('fade-in');
-  void container.offsetWidth; // reset animation
+  void container.offsetWidth;
   container.classList.add('fade-in');
 
   backBtn.classList.toggle('hidden', index === 0);
   nextBtn.textContent = index === slides.length - 1 ? 'Finish' : 'Next';
+
+  if (index === slides.length - 1) {
+    document.getElementById("summary1").textContent = userResponses[0];
+    document.getElementById("summary2").textContent = userResponses[1];
+    document.getElementById("summary3").textContent = userResponses[2];
+  }
 }
 
 backBtn.addEventListener('click', () => {
@@ -122,9 +149,8 @@ nextBtn.addEventListener('click', () => {
     currentSlide++;
     showSlide(currentSlide);
   } else {
-    alert("Thank you! (A summary page will be added soon.)");
+    alert("You've completed the reflection!");
   }
 });
 
-// Start the first slide
 showSlide(currentSlide);
